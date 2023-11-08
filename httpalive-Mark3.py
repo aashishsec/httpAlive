@@ -49,15 +49,15 @@ def httpAlive(urlfile):
 
                if content_length is not None:
                    
-                   print("(Status: {}) --(Size: {})---> {}".format(statusCode,content_length,subdomain))
+                   print("(Status: {}) --[Size: {}]---> {}".format(statusCode,content_length,subdomain))
 
                else:
                    
-                   print("(Status: {}) --(Size: {})---> {}".format(statusCode,len(request.content),subdomain))
+                   print("(Status: {}) --[Size: {}]---> {}".format(statusCode,len(request.content),subdomain))
 
             else:
                
-               print("(Status: {}) --(Size: {})---> {}".format(statusCode,len(request.content),subdomain))
+               print("(Status: {}) --[Size: {}]---> {}".format(statusCode,len(request.content),subdomain))
                       
                
         except:
