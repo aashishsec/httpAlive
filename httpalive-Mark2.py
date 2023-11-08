@@ -17,10 +17,6 @@ print('''
         
         Just wait things takes time.................
         
-        Output will be in the form bellow😎😎
-        
-        {status-code}--{content-size}---> {url}
-        
       ''')
 
 def httpAlive(urlfile):
@@ -53,15 +49,15 @@ def httpAlive(urlfile):
 
                if content_length is not None:
                    
-                   print("{} --{}---> {}".format(statusCode,content_length,subdomain))
+                   print("(Status: {}) --(Size: {})---> {}".format(statusCode,content_length,subdomain))
 
                else:
                    
-                   print("{} --{}---> {}".format(statusCode,len(request.content),subdomain))
+                   print("(Status: {}) --(Size: {})---> {}".format(statusCode,len(request.content),subdomain))
 
             else:
                
-               print("{} --{}---> {}".format(statusCode,len(request.content),subdomain))
+               print("(Status: {}) --(Size: {})---> {}".format(statusCode,len(request.content),subdomain))
                       
                
         except:
