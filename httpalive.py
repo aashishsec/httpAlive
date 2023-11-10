@@ -1,7 +1,8 @@
 import requests
+import sys
 
-
-print('''
+def banner():
+    print('''
       
 
 ██╗░░██╗████████╗████████╗██████╗░░░░░░░░█████╗░██╗░░░░░██╗██╗░░░██╗███████╗
@@ -15,12 +16,23 @@ print('''
                                               
         Github   : https://github.com/aashish36
         
-        Just wait things takes time.................
-        
       ''')
+    
+def help():
+        banner()
+        print(
+            
+        '''
+    Usage: python httpAlive.py file-paths-url
+
+    Options:
+    -h --> help
+    -u --> List of Subdomains or URLs
+        ''')
 
 def httpAlive(urlfile):
   
+  banner()
   attempts=0
   
   with open(urlfile,"r") as subdomains:
@@ -67,6 +79,11 @@ def httpAlive(urlfile):
         attempts +=1
 
 
-list="waymore.txt"
 
-httpAlive(list)
+if sys.argv !=2:
+    help()
+    
+if sys.argv[1] =="-h":
+    help()
+else:
+    httpAlive(sys.argv[1])
