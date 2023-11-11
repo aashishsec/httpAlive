@@ -1,8 +1,39 @@
 import requests
+
 import sys
 
+import colorama
+
+import random
+
+from colorama import Fore, Back, Style
+
+colorama.init(autoreset=True)
+
+green = Fore.GREEN
+
+magenta = Fore.MAGENTA
+
+cyan = Fore.CYAN
+
+mixed = Fore.RED + Fore.BLUE
+
+red = Fore.RED
+
+blue = Fore.BLUE
+
+yellow = Fore.YELLOW
+
+white = Fore.WHITE
+
+colors = [green,magenta,cyan,mixed,red,blue,yellow, white]
+
+random_color = random.choice(colors)
+
+bold = Style.BRIGHT
+
 def banner():
-    print('''
+    print(f'''{bold}{random_color}
       
 
 ██╗░░██╗████████╗████████╗██████╗░░░░░░░░█████╗░██╗░░░░░██╗██╗░░░██╗███████╗
@@ -15,14 +46,14 @@ def banner():
         Author   : Aashish💕💕  
                                               
         Github   : https://github.com/aashish36
+          
+        HttpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
         
       ''')
     
 def help():
         banner()
-        print(
-            
-        '''
+        print(f'''{bold}{random_color}
     Usage: python httpAlive.py file-paths-url
 
     Options:
@@ -61,15 +92,15 @@ def httpAlive(urlfile):
 
                if content_length is not None:
                    
-                   print("(Status: {}) --[Size: {}]---> {}".format(statusCode,content_length,subdomain))
+                   print(f"{bold}{green}(Status: {statusCode}) --[Size: {content_length}]---> {subdomain}")
 
                else:
                    
-                   print("(Status: {}) --[Size: {}]---> {}".format(statusCode,len(request.content),subdomain))
+                   print(f"{bold}{green}(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}")
 
             else:
                
-               print("(Status: {}) --[Size: {}]---> {}".format(statusCode,len(request.content),subdomain))
+                print(f"{bold}{random_color}(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}")
                       
                
         except:
@@ -79,11 +110,17 @@ def httpAlive(urlfile):
         attempts +=1
 
 
-
-if sys.argv !=2:
-    help()
+def main():
     
-if sys.argv[1] =="-h":
-    help()
-else:
-    httpAlive(sys.argv[1])
+    if len(sys.argv)!=2 or sys.argv[1]=="-h":
+        
+        help()
+    else:
+        httpAlive(sys.argv[1])   
+     
+
+
+if __name__ == "__main__":
+    
+    main()
+
