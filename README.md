@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-- Create a file containing that contains list of URLs or subdoamins or both and give to httpAlive to check the statuscode with content length.
+- Create a file containing that contains list of URLs or subdoamins or both and give to httpAlive. The output contains status codes and content length.
 
 - This python code will save the results of the analysis to a file named 'output.txt'.
 
@@ -35,7 +35,8 @@ usage: httpalive-Mark6.py [-h] [-d list] [-o output]
 httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
 
 options:
-  -h, --help            show this help message and exit
+
+  -h, --help            show this help message and exit.
 
   -d list, --DomainList list
                         [INFO]: List of Subdomains or URLs.
