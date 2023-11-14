@@ -1,7 +1,5 @@
 import requests
 
-import sys
-
 import colorama
 
 import random
@@ -9,6 +7,8 @@ import random
 from colorama import Fore, Back, Style
 
 colorama.init(autoreset=True)
+
+import argparse
 
 green = Fore.GREEN
 
@@ -26,15 +26,15 @@ yellow = Fore.YELLOW
 
 white = Fore.WHITE
 
-colors = [green,magenta,cyan,mixed,red,blue,yellow, white]
+colors = [magenta,cyan,mixed,red,blue,yellow, white]
 
 random_color = random.choice(colors)
 
 bold = Style.BRIGHT
 
 def banner():
+
     print(f'''{bold}{random_color}
-      
 
 ██╗░░██╗████████╗████████╗██████╗░░░░░░░░█████╗░██╗░░░░░██╗██╗░░░██╗███████╗
 ██║░░██║╚══██╔══╝╚══██╔══╝██╔══██╗░░░░░░██╔══██╗██║░░░░░██║██║░░░██║██╔════╝
@@ -47,19 +47,17 @@ def banner():
                                               
         Github   : https://github.com/aashish36
           
-        HttpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
-        
+        httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
+          
       ''')
-    
-def help():
-        banner()
-        print(f'''{bold}{random_color}
-    Usage: python httpAlive.py file-paths-url
 
-    Options:
-    -h --> help
-    -u --> List of Subdomains or URLs
-        ''')
+
+parser=argparse.ArgumentParser(description=f"{bold}{random_color}httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.")
+parser.add_argument('-d','--DomainList',metavar='list',type=str,help=f"[{bold}{random_color}INFO]: {bold}{random_color}List of Subdomains or URLs.")
+parser.add_argument('-o','--output',metavar='output',type=str,help=f"[{bold}{random_color}INFO]: {bold}{random_color}File to save our output.")
+args=parser.parse_args()
+DominList=args.DomainList
+output=args.output
 
 def httpAlive(urlfile):
   
@@ -82,7 +80,7 @@ def httpAlive(urlfile):
                   
                   url="https://{}".format(subdomain)
 
-            request=requests.get(url)
+            request=requests.get(url,timeout=10)
 
             statusCode=request.status_code
 
@@ -101,26 +99,16 @@ def httpAlive(urlfile):
             else:
                
                 print(f"{bold}{random_color}(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}")
-                      
-               
+                
         except:
-
             pass
 
         attempts +=1
 
 
 def main():
-    
-    if len(sys.argv)!=2 or sys.argv[1]=="-h":
-        
-        help()
-    else:
-        httpAlive(sys.argv[1])   
-     
-
+        httpAlive(DominList)   
 
 if __name__ == "__main__":
-    
     main()
 
