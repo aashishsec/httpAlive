@@ -59,10 +59,14 @@ args=parser.parse_args()
 DominList=args.DomainList
 output=args.output
 
+global_output=[]
+
+
 def httpAlive(urlfile):
   
   banner()
   attempts=0
+  global global_output
   
   with open(urlfile,"r") as subdomains:
 
@@ -91,14 +95,17 @@ def httpAlive(urlfile):
                if content_length is not None:
                    
                    print(f"{bold}{green}(Status: {statusCode}) --[Size: {content_length}]---> {subdomain}")
+                   global_output.append(f"(Status: {statusCode}) --[Size: {content_length}]---> {subdomain}\n")
 
                else:
                    
                    print(f"{bold}{green}(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}")
+                   global_output.append(f"(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}\n")
 
             else:
                
                 print(f"{bold}{random_color}(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}")
+                global_output.append(f"(Status: {statusCode}) --[Size: {len(request.content)}]---> {subdomain}\n")
                 
         except:
             pass
@@ -106,9 +113,16 @@ def httpAlive(urlfile):
         attempts +=1
 
 
+def saveOutput(output):
+    with open(output,'w') as file:
+        file.write('\n'.join(global_output))
+        
+
+
 def main():
-        httpAlive(DominList)   
+        httpAlive(DominList)
+        saveOutput(output)   
+
 
 if __name__ == "__main__":
     main()
-
