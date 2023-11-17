@@ -53,8 +53,8 @@ def banner():
 
 
 parser=argparse.ArgumentParser(description=f"{bold}{random_color}httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.")
-parser.add_argument('-d','--DomainList',metavar='list',type=str,help=f"[{bold}{random_color}INFO]: {bold}{random_color}List of Subdomains or URLs.")
-parser.add_argument('-o','--output',metavar='output',type=str,help=f"[{bold}{random_color}INFO]: {bold}{random_color}File to save our output.")
+parser.add_argument('-l','--DomainList',metavar='list',type=str,required=True,help=f"[{bold}{random_color}INFO]: {bold}{random_color}List of Subdomains or URLs.")
+parser.add_argument('-o','--output',metavar='output',type=str,default="output.txt",required=False,help=f"[{bold}{random_color}INFO]: {bold}{random_color}File to save our output.")
 args=parser.parse_args()
 DominList=args.DomainList
 output=args.output
@@ -117,6 +117,7 @@ def saveOutput(output):
     with open(output,'w') as file:
         file.write('\n'.join(global_output))
         
+
 
 
 def main():
