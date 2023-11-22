@@ -1,6 +1,8 @@
 # httpAlive
 
-- HttpAlive is a  tool designed to efficiently probe for alive subdomains and Urls  from a provided list along with statuscode and content length. 
+- HttpAlive is a  tool designed to efficiently probe for alive subdomains and Urls  from a provided list along with statuscode and content length.
+
+- This httpAlive tool also had threading which will speed up the process.
   
 -  Works in all platforms.
 
