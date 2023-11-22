@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ``` bash
 
-usage: httpalive-Mark6.py [-h] [-d list] [-o output]
+usage: httpalive-Mark9.py [-h] -l list [-o output] [-c CONCURRENCY] [-t THREADS]
 
 httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
 
@@ -38,11 +38,17 @@ options:
 
   -h, --help            show this help message and exit.
 
-  -d list, --DomainList list
+  -l list, --DomainList list
                         [INFO]: List of Subdomains or URLs.
 
   -o output, --output output
                         [INFO]: File to save our output.
+
+  -c CONCURRENCY, --concurrency CONCURRENCY
+                        [INFO]: Concurrency level to make fast process.
+
+  -t THREADS, --threads THREADS
+                        [INFO]: Threading level to make fast process.
 
 ```
 
