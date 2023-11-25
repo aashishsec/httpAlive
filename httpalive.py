@@ -1,6 +1,8 @@
 import requests,colorama,random,argparse,concurrent.futures
 
-from colorama import Fore, Back, Style
+from datetime import datetime
+
+from colorama import Fore, Style
 
 colorama.init(autoreset=True)
 
@@ -46,7 +48,12 @@ def banner():
         httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
           
       ''')
+    print("-" * 80)
 
+    print(f"{bold}{random_color}httpAlive starting at {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+
+    print("-" * 80)
+    
 
 parser=argparse.ArgumentParser(description=f"{bold}{random_color}httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.")
 
@@ -54,9 +61,9 @@ parser.add_argument('-l','--DomainList',metavar='list',type=str,required=True,he
 
 parser.add_argument('-o','--output',metavar='output',type=str,default="httpAlive_output.txt",required=False,help=f"[{bold}{random_color}INFO]: {bold}{random_color}File to save our output.")
 
-parser.add_argument("-c", "--concurrency", help=f"[{bold}{random_color}INFO{random_color}]: {bold}{random_color}Concurrency level to make fast process", type=int, default=10)
+parser.add_argument("-c", "--concurrency", help=f"[{bold}{random_color}INFO{random_color}]: {bold}{random_color}Concurrency level to make fast process.", type=int, default=10)
 
-parser.add_argument("-t", "--threads", help=f"[{bold}INFO{random_color}]: {random_color}{random_color}Threading level to make fast process", type=int, default=4)
+parser.add_argument("-t", "--threads", help=f"[{bold}INFO{random_color}]: {random_color}{random_color}Threading level to make fast process.", type=int, default=4)
 
 args=parser.parse_args()
 
@@ -156,6 +163,7 @@ def main(DominList):
     urls=[]
     
     try:
+        
         with open(DominList,"r") as subdomains:
        
            subdomain=subdomains.read().splitlines()
