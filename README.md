@@ -53,6 +53,9 @@ options:
                         [INFO]: Threading level to make fast process.
 
 ```
+## Tool Output
+
+![Screenshot 2023-11-28 173900](https://github.com/aashishsec/httpAlive/assets/65489287/bfaff3d7-b434-416e-87b3-b38b5954c1a7)
 
 ## Contributing
 
