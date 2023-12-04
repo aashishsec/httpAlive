@@ -24,11 +24,12 @@ white = Fore.WHITE
 
 reset = Style.RESET_ALL
 
+bold = Style.BRIGHT
+
 colors = [magenta,cyan,mixed,red,blue,yellow, white]
 
 random_color = random.choice(colors)
 
-bold = Style.BRIGHT
 
 def banner():
 
@@ -117,7 +118,7 @@ def httpAlive(subdomain):
                   
                   url="https://{}".format(subdomain)
 
-            request=requests.get(url,timeout=10,headers=random_user_agent, allow_redirects=True)
+            request=requests.get(url,timeout=10, headers={"User-Agent": random_user_agent})
 
             statusCode=request.status_code
 
