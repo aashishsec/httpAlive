@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import requests,colorama,random,argparse,concurrent.futures
+import requests,colorama,random,argparse,concurrent.futures,httpx
 
 from datetime import datetime
 
@@ -83,6 +83,8 @@ global_output=[]
 
 def httpAlive(subdomain):
 
+    global global_output
+
     USER_AGENT  = [
         
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246",
@@ -108,19 +110,20 @@ def httpAlive(subdomain):
 
     random_user_agent = random.choice(USER_AGENT)
 
-    global global_output
+    if subdomain[0:5]=="https" or subdomain[0:7]=="http://":
+                  
+            url=subdomain
+
+    else:
+                  
+            url="https://{}".format(subdomain)
+    
+    header={"User-Agent": random_user_agent}
 
     try:
+            with httpx.Client(verify=False,timeout=10,follow_redirects=True,headers=header) as client:
 
-            if subdomain[0:5]=="https" or subdomain[0:7]=="http://":
-                  
-                  url=subdomain
-
-            else:
-                  
-                  url="https://{}".format(subdomain)
-
-            request=requests.get(url,timeout=10, headers={"User-Agent": random_user_agent})
+                request=client.get(url)
 
             statusCode=request.status_code
 
