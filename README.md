@@ -53,7 +53,7 @@ options:
 ```
 ## Tool Output
 
-![Screenshot 2023-11-28 173900](https://github.com/aashishsec/httpAlive/assets/65489287/bfaff3d7-b434-416e-87b3-b38b5954c1a7)
+![image](https://github.com/aashishsec/httpAlive/assets/65489287/c15966b3-9795-4e30-b33a-a30b42438614)
 
 ## Contributing
 
