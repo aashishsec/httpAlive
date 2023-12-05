@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests,colorama,random,argparse,concurrent.futures
 
 from datetime import datetime
