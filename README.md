@@ -1,4 +1,4 @@
-# httpAlive
+# httpAlive - URL Analysis Tool
 
 - HttpAlive is a web probing tool designed for discovering alive subdomains and URLs, and it offers options for updating the tool, specifying input/output files, and adjusting concurrency and threading levels.
     
