@@ -68,7 +68,7 @@ pip install .
 
 ```
 
-### httpAlive help
+### httpAlive help:
 
 ``` bash
 
