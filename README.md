@@ -12,9 +12,8 @@
 ## Installation
 
 - Clone the repository to your local machine.
-  
-- Install the required dependencies using pip
 
+### Method 1
 
 ```bash
 
@@ -26,13 +25,21 @@ pip install -r requirements.txt
 
 ```
 
-## Usage
+### Method 2
 
-- Create a file containing that contains list of URLs or subdoamins or both and give to httpAlive. The output contains status codes and content length.
+```bash
 
-- This python code will save the results of the analysis to a file named 'output.txt'.
+git clone https://github.com/aashish36/httpAlive.git
 
-- Run the script using the following command: 
+cd httpAlive
+
+pip install .
+
+
+```
+
+---
+
 
 ``` bash
 
@@ -69,6 +76,31 @@ options:
                         [INFO]: Threading level to make fast process.
 
 ```
+
+## Usage
+
+- Create a file containing that contains list of URLs or subdoamins or both and give to httpAlive. The output contains status codes and content length.
+
+- This python code will save the results of the analysis to a file named 'output.txt'.
+
+- Run the script with urls or subdomain list.
+
+### Method 1
+
+```bash
+
+python ./httpAlive/httpAlive -l subdomainList.txt
+
+```
+
+### Method 2
+
+```bash
+
+httpAlive -l subdomainList.txt
+
+```
+
 ## Tool Output
 
 ![image](https://github.com/aashishsec/httpAlive/assets/65489287/c15966b3-9795-4e30-b33a-a30b42438614)
