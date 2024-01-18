@@ -1,4 +1,4 @@
-# httpAlive - URL Analysis Tool
+# httpAlive - URL Analysis Tool for WAPT
 
 [Tool Link](https://github.com/aashishsec/httpAlive/)
 
