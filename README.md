@@ -114,6 +114,9 @@ options:
 
 - Run the script with urls or subdomain list.
 
+### Note
+- Do not give more threads. It might cause Race Condition
+
 ### Method 1
 
 ```bash
