@@ -17,7 +17,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'httpAlive = httpAlive:main',
+            'httpAlive = httpAlive.httpAlive:main',
         ],
     },
 )
