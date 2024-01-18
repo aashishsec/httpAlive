@@ -6,12 +6,38 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/aashishsec/httpAlive) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aashishsec/httpAlive) [![GitHub license](https://img.shields.io/github/license/aashishsec/httpAlive)](https://github.com/aashishsec/httpAlive/blob/main/LICENSE) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/aashishsec/)
 
-### Overview
+## Overview
 
-- HttpAlive is a web probing tool designed for discovering alive subdomains and URLs, and it offers options for updating the tool, specifying input/output files, and adjusting concurrency and threading levels.
-    
--  Works in all platforms.
+- The "httpAlive" tool is designed to efficiently probe for alive subdomains and URLs from a provided list.
+- It includes features such as user-agent rotation, colorized output, multithreading, and a command-line interface (CLI) for ease of use.
+- Works in all platforms.
 
+## Features
+
+1. **User-Agent Rotation:**
+   - Randomly selects a user agent from a predefined list for each HTTP request to avoid detection.
+
+2. **Colorized Output:**
+   - Utilizes the `colorama` library to provide colorized and visually appealing output.
+
+3. **Multithreading:**
+   - Implements multithreading using Python's `concurrent.futures` module for concurrent execution of HTTP requests.
+
+4. **HTTP Client:**
+   - Utilizes the `httpx` library as the HTTP client with SSL certificate verification disabled.
+
+5. **Command-Line Interface (CLI):**
+   - Accepts command-line arguments through the `argparse` module for easy configuration.
+
+6. **Output File:**
+   - Saves results to an output file specified by the user (default: "httpAlive_output.txt").
+
+7. **Banner Display:**
+   - Displays a colorful banner at the beginning with information about the tool, author, and GitHub profile.
+
+8. **Exception Handling:**
+   - Includes exception handling to gracefully handle interruptions, such as `KeyboardInterrupt`.
+     
 
 ## Installation
 
