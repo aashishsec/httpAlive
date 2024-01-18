@@ -2,6 +2,10 @@
 
 [Tool Link](https://github.com/aashishsec/httpAlive/)
 
+---
+
+![GitHub last commit](https://img.shields.io/github/last-commit/aashishsec/httpAlive) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aashishsec/httpAlive) [![GitHub license](https://img.shields.io/github/license/aashishsec/httpAlive)](https://github.com/aashishsec/httpAlive/blob/main/LICENSE) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/aashishsec/)
+
 ### Overview
 
 - HttpAlive is a web probing tool designed for discovering alive subdomains and URLs, and it offers options for updating the tool, specifying input/output files, and adjusting concurrency and threading levels.
