@@ -1,4 +1,4 @@
-# httpAlive - URL Analysis Tool for WAPT
+# httpAlive - URL Analysis Tool for Web Application Penetration Test
 
 [Tool Link](https://github.com/aashishsec/httpAlive/)
 
