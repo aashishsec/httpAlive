@@ -2,9 +2,12 @@
 
 [Tool Link](https://github.com/aashishsec/httpAlive/)
 
+### Overview
+
 - HttpAlive is a web probing tool designed for discovering alive subdomains and URLs, and it offers options for updating the tool, specifying input/output files, and adjusting concurrency and threading levels.
     
 -  Works in all platforms.
+
 
 ## Installation
 
@@ -14,6 +17,7 @@
 
 
 ```bash
+
 git clone https://github.com/aashish36/httpAlive.git
 
 cd httpAlive
@@ -32,9 +36,21 @@ pip install -r requirements.txt
 
 ``` bash
 
-usage: httpalive-Mark9.py [-h] -l list [-o output] [-c CONCURRENCY] [-t THREADS]
+██╗░░██╗████████╗████████╗██████╗░░░░░░░░█████╗░██╗░░░░░██╗██╗░░░██╗███████╗
+██║░░██║╚══██╔══╝╚══██╔══╝██╔══██╗░░░░░░██╔══██╗██║░░░░░██║██║░░░██║██╔════╝
+███████║░░░██║░░░░░░██║░░░██████╔╝█████╗███████║██║░░░░░██║╚██╗░██╔╝█████╗░░
+██╔══██║░░░██║░░░░░░██║░░░██╔═══╝░╚════╝██╔══██║██║░░░░░██║░╚████╔╝░██╔══╝░░
+██║░░██║░░░██║░░░░░░██║░░░██║░░░░░░░░░░░██║░░██║███████╗██║░░╚██╔╝░░███████╗
+╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░╚═╝░░░░░░░░░░░╚═╝░░╚═╝╚══════╝╚═╝░░░╚═╝░░░╚══════╝
+      
+        Author   : Aashish💕💕  
+                                              
+        Github   : https://github.com/aashish36
+          
+        httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
 
-httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
+
+usage: httpalive-Mark9.py [-h] -l list [-o output] [-c CONCURRENCY] [-t THREADS]
 
 options:
 
