@@ -128,7 +128,7 @@ def checking_vesion():
                 
             latest = data.get('name')
             
-              if latest == version:
+            if latest == version:
                 
                     message = "latest"
                 
@@ -136,23 +136,23 @@ def checking_vesion():
                 
                     t.sleep(1)
                 
-               else:
+            elif:
                 
                     message ="outdated"
                 
                     print(f"[{blue}Version{reset}]: {bold}{white}httpAlive current version {version} ({red}{message}{reset})")
 
-                else:
-                        
-                    pass
+            else:
+               
+               pass
             
-      except KeyboardInterrupt as e:
+    except KeyboardInterrupt as e:
         
             print(f"[{blue}INFO{random_color}]: httpAlive says BYE!")
         
             exit()
                 
-     except Exception as e:
+    except Exception as e:
 
            pass
 
