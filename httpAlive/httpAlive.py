@@ -82,10 +82,6 @@ def banner():
 
     print("-" * 80)
 
-    print(f"{bold}{random_color}[*] Threads".ljust(20, " "), ":", threads)
-
-    print(f"{bold}{random_color}[*] Concurrency".ljust(20, " "), ":",concurrency)
-
 
 global_output=[]
 
@@ -196,6 +192,10 @@ def main():
     threads=args.threads
         
     banner()
+
+    print(f"{bold}{random_color}[*] Threads".ljust(20, " "), ":", threads)
+
+    print(f"{bold}{random_color}[*] Concurrency".ljust(20, " "), ":",concurrency)
 
     global global_urls
     
