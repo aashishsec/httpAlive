@@ -67,6 +67,16 @@ parser.add_argument("-c", "--concurrency", help=f"[{bold}{random_color}INFO{rand
 
 parser.add_argument("-t", "--threads", help=f"[{bold}INFO{random_color}]: {random_color}{random_color}Threading level to make fast process.", type=int, default=4)
 
+args=parser.parse_args()
+
+DominList=args.DomainList
+
+output=args.output
+
+concurrency=args.concurrency
+
+threads=args.threads
+        
 
 def banner():
 
@@ -91,6 +101,10 @@ def banner():
     print(f"{bold}{random_color}httpAlive starting at {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
 
     print("-" * 80)
+   
+    print(f"{bold}{random_color}[*] Threads".ljust(20, " "), ":", threads)
+
+    print(f"{bold}{random_color}[*] Concurrency".ljust(20, " "), ":",concurrency)
 
 
 global_output=[]
@@ -181,22 +195,7 @@ def threading(urls):
 
 def main():
 
-    args=parser.parse_args()
-
-    DominList=args.DomainList
-
-    output=args.output
-
-    concurrency=args.concurrency
-
-    threads=args.threads
-        
     banner()
-        
-    print(f"{bold}{random_color}[*] Threads".ljust(20, " "), ":", threads)
-
-    print(f"{bold}{random_color}[*] Concurrency".ljust(20, " "), ":",concurrency)
-
 
     global global_urls
     
