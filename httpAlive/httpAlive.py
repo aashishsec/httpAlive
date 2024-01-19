@@ -76,6 +76,10 @@ output=args.output
 concurrency=args.concurrency
 
 threads=args.threads
+
+global_output=[]
+
+global_urls=[]
         
 
 def banner():
@@ -98,6 +102,8 @@ def banner():
       ''')
     print("-" * 80)
 
+    checking_vesion()
+
     print(f"{bold}{random_color}httpAlive starting at {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
 
     print("-" * 80)
@@ -106,10 +112,49 @@ def banner():
 
     print(f"{bold}{random_color}[*] Concurrency".ljust(20, " "), ":",concurrency)
 
+def checking_vesion():
 
-global_output=[]
+    version = "v1.0.0"
+    
+    url = f"https://api.github.com/repos/aashishsec/httpAlive/releases/latest"
+    
+    try:
+            
+         response =  requests.get(url, timeout=10)
+          
+         if response.status_code == 200:
+            
+            data = response.json()
+                
+            latest = data.get('name')
+            
+              if latest == version:
+                
+                    message = "latest"
+                
+                    print(f"[{blue}Version{reset}]: {bold}{white}httpAlive current version {version} ({green}{message}{reset})")
+                
+                    t.sleep(1)
+                
+               else:
+                
+                    message ="outdated"
+                
+                    print(f"[{blue}Version{reset}]: {bold}{white}httpAlive current version {version} ({red}{message}{reset})")
 
-global_urls=[]
+                else:
+                        
+                    pass
+            
+      except KeyboardInterrupt as e:
+        
+            print(f"[{blue}INFO{random_color}]: httpAlive says BYE!")
+        
+            exit()
+                
+     except Exception as e:
+
+           pass
 
 
 def httpAlive(subdomain):
