@@ -85,27 +85,7 @@ def banner():
     print(f"{bold}{random_color}[*] Threads".ljust(20, " "), ":", threads)
 
     print(f"{bold}{random_color}[*] Concurrency".ljust(20, " "), ":",concurrency)
-    
 
-parser=argparse.ArgumentParser(description=f"{bold}{random_color}httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.")
-
-parser.add_argument('-l','--DomainList',metavar='list',type=str,required=True,help=f"[{bold}{random_color}INFO]: {bold}{random_color}List of Subdomains or URLs.")
-
-parser.add_argument('-o','--output',metavar='output',type=str,default="httpAlive_output.txt",required=False,help=f"[{bold}{random_color}INFO]: {bold}{random_color}File to save our output.")
-
-parser.add_argument("-c", "--concurrency", help=f"[{bold}{random_color}INFO{random_color}]: {bold}{random_color}Concurrency level to make fast process.", type=int, default=10)
-
-parser.add_argument("-t", "--threads", help=f"[{bold}INFO{random_color}]: {random_color}{random_color}Threading level to make fast process.", type=int, default=4)
-
-args=parser.parse_args()
-
-DominList=args.DomainList
-
-output=args.output
-
-concurrency=args.concurrency
-
-threads=args.threads
 
 global_output=[]
 
@@ -193,7 +173,27 @@ def threading(urls):
         pass 
 
 
-def main(DominList):
+def main():
+   
+    parser=argparse.ArgumentParser(description=f"{bold}{random_color}httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.")
+
+    parser.add_argument('-l','--DomainList',metavar='list',type=str,required=True,help=f"[{bold}{random_color}INFO]: {bold}{random_color}List of Subdomains or URLs.")
+
+    parser.add_argument('-o','--output',metavar='output',type=str,default="httpAlive_output.txt",required=False,help=f"[{bold}{random_color}INFO]: {bold}{random_color}File to save our output.")
+
+    parser.add_argument("-c", "--concurrency", help=f"[{bold}{random_color}INFO{random_color}]: {bold}{random_color}Concurrency level to make fast process.", type=int, default=10)
+
+    parser.add_argument("-t", "--threads", help=f"[{bold}INFO{random_color}]: {random_color}{random_color}Threading level to make fast process.", type=int, default=4)
+
+    args=parser.parse_args()
+
+    DominList=args.DomainList
+
+    output=args.output
+
+    concurrency=args.concurrency
+
+    threads=args.threads
         
     banner()
 
@@ -229,4 +229,4 @@ def main(DominList):
 
 if __name__ == "__main__":
 
-    main(DominList)
+    main()
