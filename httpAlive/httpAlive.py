@@ -136,15 +136,12 @@ def checking_vesion():
                 
                     t.sleep(1)
                 
-            elif:
+            else:
                 
                     message ="outdated"
                 
                     print(f"[{blue}Version{reset}]: {bold}{white}httpAlive current version {version} ({red}{message}{reset})")
 
-            else:
-               
-               pass
             
     except KeyboardInterrupt as e:
         
