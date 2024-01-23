@@ -114,7 +114,7 @@ def banner():
 
 def checking_vesion():
 
-    version = "v1.0.0"
+    version = "v1.0.2"
     
     url = f"https://api.github.com/repos/aashishsec/httpAlive/releases/latest"
     
