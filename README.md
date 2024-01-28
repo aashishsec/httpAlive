@@ -81,7 +81,7 @@ pip install .
       
         Author   : Aashish💕💕  
                                               
-        Github   : https://github.com/aashish36
+        Github   : https://github.com/aashishsec
           
         httpAlive is a tool designed to efficiently probe for alive subdomains and Urls from a provided list.
 
