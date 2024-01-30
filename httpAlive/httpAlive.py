@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 
-import requests,colorama,random,argparse,concurrent.futures,httpx
+import requests
+
+import colorama
+
+import random
+
+import argparse
+
+import concurrent.futures
+
+import httpx
 
 from datetime import datetime
 
