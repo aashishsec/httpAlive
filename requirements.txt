@@ -2,4 +2,3 @@ requests
 httpx
 colorama
 argparse
-concurrent.futures
