@@ -13,7 +13,7 @@ setup(
         'colorama',
     ],
     extras_require={
-        'dev': ['argparse', 'concurrent.futures'],
+        'dev': ['argparse'],
     },
     entry_points={
         'console_scripts': [
